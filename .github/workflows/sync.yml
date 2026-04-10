@@ -62,4 +62,3 @@ jobs:
           echo "✅ 全部成功！代码已推送到你的新仓库："
           echo "https://github.com/wait2021/linphone-desktop-full-1"
           echo "====================================="
-          
