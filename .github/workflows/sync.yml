@@ -19,12 +19,17 @@ jobs:
 
           # 按你要求的格式，逐个克隆子模块并打印日志
           git submodule init
+
+          
           git config -f .gitmodules --get-regexp '^submodule\..*\.url$' | while read -r key url; do
             name=$(echo "$key" | sed -E 's/^submodule\.(.*)\.url$/\1/')
             path=$(git config -f .gitmodules "submodule.$name.path")
             
             start=$(date +"%Y-%m-%d %H:%M:%S")
             echo "开始克隆子模块[ $start ]：$name  地址：$url"
+
+
+
 
             git submodule update --init "$path"
 
